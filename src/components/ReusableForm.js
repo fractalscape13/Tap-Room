@@ -20,7 +20,7 @@ function ReusableForm(props) {
     brand = 'Brand';
     price = 'Price $';
     flavor = 'Flavor';
-    caffeine = 'Caffeine content';
+    caffeine = 'Caffeine content per serving in mg';
     quantity = 'Quantity in pints';
   }
 
@@ -44,7 +44,7 @@ function ReusableForm(props) {
           name='flavor'
           placeholder={flavor} /><br />
         <input
-          type='text'
+          type='number'
           name='caffeine'
           placeholder={caffeine} /><br />
         <input
