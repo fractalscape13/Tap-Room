@@ -18,7 +18,6 @@ function EditKegForm(props) {
         formSubmissionHandler={handleEditKegFormSubmission}
         buttonText="Update Keg" />
     </React.Fragment>
-
   );
 }
 

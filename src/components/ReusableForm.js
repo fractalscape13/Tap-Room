@@ -8,6 +8,7 @@ function ReusableForm(props) {
   let flavor = null;
   let caffeine = null;
   let quantity = null;
+  
   if (props.editing) {
     name = 'Name: ' + props.keg.name;
     brand = 'Brand: ' + props.keg.brand;
