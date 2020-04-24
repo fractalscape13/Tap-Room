@@ -3,7 +3,7 @@
 _April 24, 2020_
 
 ## Description
-_This app allows a user to add kegs to the inventory list and see the master list.  A user can then update an existing keg or delete it entirely.  A user can also "sell a pint" and reduce the quantity of a keg.  
+_This app allows a user to add kegs to the inventory list and see the master list.  A user can then update an existing keg or delete it entirely.  A user can also "sell a pint" and reduce the quantity of a keg._
 
 ## Component Tree
 ![Diagram](./public/diagram.png?raw=true "Title")
@@ -13,8 +13,6 @@ _Setup assumes use of Git version control_
 
 Navigate to desktop or other directory and clone the repository by typing:
   * git clone https://github.com/fractalscape13/TapRoom
-Navigate into project directory by typing:
-  * cd taproom
 
 In the project directory, you can run:
 
