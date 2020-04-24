@@ -1,4 +1,11 @@
+## Tap Room Inventory app
+By: Joseph Wangemann
+April 24, 2020
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Component Tree
+![Diagram](./public/diagram.png?raw=true "Title")
 
 ## Available Scripts
 
