@@ -43,11 +43,11 @@ const stocked = {
 }
 
 const gettingLow = {
-  color: 'goldenrod'
+  color: 'darkorange'
 }
 
 const gettingVeryLow = {
-  color: 'magenta'
+  color: 'darkmagenta'
 }
 
 const outOfStock = {
