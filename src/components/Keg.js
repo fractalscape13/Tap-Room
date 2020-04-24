@@ -5,9 +5,9 @@ function Keg(props) {
 
   let quantity = '';
   if (props.quantity > 1) {
-    quantity = props.quantity + ' pints';
+    quantity = 'Quantity in Keg: ' + props.quantity + ' pints';
   } else if (props.quantity == 1) {
-    quantity = ' 1 pint left';
+    quantity = 'Quantity in Keg: 1 pint left';
   } else {
     quantity = "Uh-oh, this tap has run dry. Time to restock!";
   }
@@ -15,7 +15,7 @@ function Keg(props) {
   return (
     <React.Fragment>
         <p className="clickable" onClick = {() => props.whenKegClicked(props.id)}>On Tap: {props.name} (Click to see details)</p>
-        <p>Quantity in keg: {quantity} </p>
+        <p>{quantity} </p>
         <button onClick={()=> props.onClickingSellPint(props.currentKeg) }>Sell a pint</button> 
         <hr />
     </React.Fragment>
