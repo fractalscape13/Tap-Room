@@ -16,7 +16,7 @@ function Keg(props) {
     <React.Fragment>
         <p className="clickable" onClick = {() => props.whenKegClicked(props.id)}>On Tap: {props.name} (Click to see details)</p>
         <p>{quantity} </p>
-        <button onClick={()=> props.onClickingSellPint(props.currentKeg) }>Sell a pint</button> 
+        <button className="sellBtn" onClick={()=> props.onClickingSellPint(props.currentKeg) }>Sell a pint</button> 
         <hr />
     </React.Fragment>
   );
