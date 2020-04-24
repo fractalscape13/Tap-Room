@@ -9,16 +9,16 @@ function ReusableForm(props) {
   let caffeine = null;
   let quantity = null;
   if (props.editing) {
-    name = props.keg.name;
-    brand = props.keg.brand;
-    price = props.keg.price;
-    flavor = props.keg.flavor;
-    caffeine = props.keg.caffeine;
-    quantity = props.keg.quantity;
+    name = 'Name: ' + props.keg.name;
+    brand = 'Brand: ' + props.keg.brand;
+    price = 'Price per pint: $' + props.keg.price;
+    flavor = 'Flavor: ' + props.keg.flavor;
+    caffeine = 'Caffeine content: ' + props.keg.caffeine + ' mg';
+    quantity = 'Quantity: ' + props.keg.quantity + ' pints';
   } else {
     name = 'Name';
     brand = 'Brand';
-    price = 'Price $';
+    price = 'Price per pint';
     flavor = 'Flavor';
     caffeine = 'Caffeine content per serving in mg';
     quantity = 'Quantity in pints';
