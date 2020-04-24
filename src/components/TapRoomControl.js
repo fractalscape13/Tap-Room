@@ -21,7 +21,7 @@ class TapRoomControl extends React.Component {
   }
 
   handleChangingSelectedKeg = (id) => {
-    const currentKeg = this.state.masterKegList.filter(keg => keg.id == id)[0];
+    const currentKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
     this.setState({selectedKeg: currentKeg});
   }
 
@@ -45,12 +45,12 @@ class TapRoomControl extends React.Component {
   }
 
   handleDeletingKeg = (id) => {
-    const newMasterKegList = this.state.masterKegList.filter(keg => keg.id != id);
+    const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id);
     this.setState({masterKegList: newMasterKegList, selectedKeg: null});
   }
 
   handleEditingKeg = (kegToEdit) => {
-    const editedMasterKegList = this.state.masterKegList.filter(keg => keg.id != this.state.selectedKeg.id).concat(kegToEdit);
+    const editedMasterKegList = this.state.masterKegList.filter(keg => keg.id !== this.state.selectedKeg.id).concat(kegToEdit);
     this.setState({masterKegList: editedMasterKegList, editing: false, selectedKeg: null});
   }
 
@@ -58,7 +58,7 @@ class TapRoomControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.editing) {
-      currentlyVisibleState = <EditKegForm keg={this.state.selectedKeg} onEditKeg={this.handleEditingKeg} />
+      currentlyVisibleState = <EditKegForm editing={this.state.editing} keg={this.state.selectedKeg} onEditKeg={this.handleEditingKeg} />
       buttonText="Return to Keg List";
     } else if (this.state.selectedKeg != null) {
       currentlyVisibleState = <KegDetail keg={this.state.selectedKeg} onClickingDelete={this.handleDeletingKeg} onClickingEdit={this.handleEditClick} />
