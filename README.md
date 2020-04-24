@@ -11,7 +11,7 @@ _This app allows a user to add kegs to the inventory list and see the master lis
 ## Setup/Installation
 _Setup assumes use of Git version control_
 
-Navigate to desktop or other directory and clone the repository by typing:
+In terminal, navigate to desktop or other directory and clone the repository by typing:
   * git clone https://github.com/fractalscape13/TapRoom
 
 In the project directory, you can run:
