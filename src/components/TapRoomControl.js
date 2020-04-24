@@ -54,6 +54,20 @@ class TapRoomControl extends React.Component {
     this.setState({masterKegList: editedMasterKegList, editing: false, selectedKeg: null});
   }
 
+  handleSellingPint = (kegToUpdate) => {
+    const newKeg = {
+      name: kegToUpdate.name,
+      brand: kegToUpdate.brand,
+      price: kegToUpdate.price,
+      flavor: kegToUpdate.flavor,
+      caffeine: kegToUpdate.caffeine,
+      quantity: kegToUpdate.quantity - 1,
+      id: kegToUpdate.id
+    }
+    const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== kegToUpdate.id).concat(newKeg);
+    this.setState({masterKegList: newMasterKegList});
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -67,7 +81,7 @@ class TapRoomControl extends React.Component {
       currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />
       buttonText = "Return to Keg List";
     } else {
-      currentlyVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} />
+      currentlyVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg}  onClickingSellPint={this.handleSellingPint} />
       buttonText = "Add a keg";
     }
     
