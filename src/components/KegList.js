@@ -9,11 +9,7 @@ function KegList(props) {
         <Keg
           whenKegClicked={props.onKegSelection}
           name={keg.name}
-          brand={keg.brand}
-          price={keg.price}
-          flavor={keg.flavor}
-          caffeine={keg.caffeine}
-          quantity={keg.quantity} />
+          id={keg.id} />
       )}
     </React.Fragment>
   );
