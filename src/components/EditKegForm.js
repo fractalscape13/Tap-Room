@@ -13,6 +13,8 @@ function EditKegForm(props) {
   return (
     <React.Fragment>
       <ReusableForm
+        editing={props.editing}
+        keg={keg}
         formSubmissionHandler={handleEditKegFormSubmission}
         buttonText="Update Keg" />
     </React.Fragment>
@@ -21,7 +23,9 @@ function EditKegForm(props) {
 }
 
 EditKegForm.propTypes = {
-  onEditKeg: PropTypes.func
+  onEditKeg: PropTypes.func, 
+  keg: PropTypes.object,
+  editing: PropTypes.bool
 };
 
 export default EditKegForm;
