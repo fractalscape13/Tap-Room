@@ -6,7 +6,7 @@ function KegDetail(props) {
   let quantity = '';
   if (props.keg.quantity > 1) {
     quantity = props.keg.quantity + ' pints';
-  } else if (props.keg.quantity == 1) {
+  } else if (props.keg.quantity === 1) {
     quantity = '1 pint left';
   } else {
     quantity = " This tap has run dry";
