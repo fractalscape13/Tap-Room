@@ -14,6 +14,8 @@ _Setup assumes use of Git version control_
 In terminal, navigate to desktop or other directory and clone the repository by typing:
   * git clone https://github.com/fractalscape13/TapRoom
 
+In the project directory, run "npm install" to install all dependencies.
+
 In the project directory, you can run:
 
 ### `npm start`
@@ -51,8 +53,10 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## Technologies Used
 * Git
 * React
+* create-react-app
 * Javascript
 * npm
+* Webpack
 * JSX
 * CSS
 
