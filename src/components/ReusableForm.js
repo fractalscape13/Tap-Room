@@ -17,14 +17,6 @@ function ReusableForm(props) {
     caffeine = props.keg.caffeine;
     quantity = props.keg.quantity;
   } 
-  // else {
-  //   name = 'Name';
-  //   brand = 'Brand';
-  //   price = 'Price per pint';
-  //   flavor = 'Flavor';
-  //   caffeine = 'Caffeine content per serving in mg';
-  //   quantity = 'Quantity in pints';
-  // }
 
   return (
     <React.Fragment>
