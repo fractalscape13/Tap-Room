@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 function Keg(props) {
 
   let quantity = '';
-  let style = '';
+  let style = {};
   if (props.quantity > 9) {
     quantity = 'Quantity in Keg: ' + props.quantity + ' pints';
     style = stocked;
   } else if (props.quantity > 1 && props.quantity < 10) {
     quantity = 'Almost Empty! Only ' + props.quantity + ' pints left';
     style = gettingLow;
-  } else if (props.quantity == 1) {
+  } else if (props.quantity === 1) {
     quantity = 'Seriously Almost Empty! Only 1 pint left!';
     style = gettingVeryLow;
   } else {
