@@ -10,20 +10,21 @@ function ReusableForm(props) {
   let quantity = null;
   
   if (props.editing) {
-    name = 'Name: ' + props.keg.name;
-    brand = 'Brand: ' + props.keg.brand;
-    price = 'Price per pint: $' + props.keg.price;
-    flavor = 'Flavor: ' + props.keg.flavor;
-    caffeine = 'Caffeine content: ' + props.keg.caffeine + ' mg';
-    quantity = 'Quantity: ' + props.keg.quantity + ' pints';
-  } else {
-    name = 'Name';
-    brand = 'Brand';
-    price = 'Price per pint';
-    flavor = 'Flavor';
-    caffeine = 'Caffeine content per serving in mg';
-    quantity = 'Quantity in pints';
-  }
+    name = props.keg.name;
+    brand = props.keg.brand;
+    price = props.keg.price;
+    flavor = props.keg.flavor;
+    caffeine = props.keg.caffeine;
+    quantity = props.keg.quantity;
+  } 
+  // else {
+  //   name = 'Name';
+  //   brand = 'Brand';
+  //   price = 'Price per pint';
+  //   flavor = 'Flavor';
+  //   caffeine = 'Caffeine content per serving in mg';
+  //   quantity = 'Quantity in pints';
+  // }
 
   return (
     <React.Fragment>
@@ -31,27 +32,33 @@ function ReusableForm(props) {
         <input
           type='text'
           name='name'
-          placeholder={name} /><br />
+          placeholder='Name'
+          defaultValue={name} /><br />
         <input
           type='text'
           name='brand'
-          placeholder={brand} /><br />
+          placeholder='Brand'
+          defaultValue={brand} /><br />
         <input
           type='number'
           name='price'
-          placeholder={price} /><br />
+          placeholder='Price per pint'
+          defaultValue={price} /><br />
         <input
           type='text'
           name='flavor'
-          placeholder={flavor} /><br />
+          placeholder='Flavor'
+          defaultValue={flavor} /><br />
         <input
           type='number'
           name='caffeine'
-          placeholder={caffeine} /><br />
+          placeholder='Caffeine content per serving in mg'
+          defaultValue={caffeine} /><br />
         <input
           type='number'
           name='quantity'
-          placeholder={quantity} /><br />
+          placeholder='Quantity in pints'
+          defaultValue={quantity} /><br />
         <button type='submit'>{props.buttonText}</button>
       </form>
     </React.Fragment>
