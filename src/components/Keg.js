@@ -5,7 +5,9 @@ function Keg(props) {
 
   let quantity = '';
   let style = {};
+  
   let imgSource = "http://source.unsplash.com/250x150/?" + props.flavor;
+
   if (props.quantity > 9) {
     quantity = 'Quantity in Keg: ' + props.quantity + ' pints';
     style = stocked;

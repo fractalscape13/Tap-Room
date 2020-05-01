@@ -72,7 +72,6 @@ class TapRoomControl extends React.Component {
       this.props.dispatch(action);
     }
   }
-
   
   render(){
     const currentKeg = this.props.masterKegList[this.props.selectedKeg.selectedKeg];
