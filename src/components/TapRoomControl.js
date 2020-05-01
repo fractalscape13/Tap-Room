@@ -6,7 +6,6 @@ import KegDetail from './KegDetail';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import * as a from './../actions/index';
-import * as c from './../actions/ActionTypes';
 
 class TapRoomControl extends React.Component {
 

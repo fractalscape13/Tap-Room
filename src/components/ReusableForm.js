@@ -4,19 +4,24 @@ import PropTypes from "prop-types";
 function ReusableForm(props) {
   let name = null;
   let brand = null;
-  let price = null;
+  let price = 0;
   let flavor = null;
-  let caffeine = null;
-  let quantity = null;
+  let caffeine = 0;
+  let quantity = 0;
   
   if (props.editing) {
-    console.log("check it out", props)
     name = props.keg.name;
     brand = props.keg.brand;
-    price = props.keg.price;
+    if (props.keg.price > 0) {
+      price = props.keg.price;
+    }
     flavor = props.keg.flavor;
-    caffeine = props.keg.caffeine;
-    quantity = props.keg.quantity;
+    if (props.keg.caffeine > 0) {
+      caffeine = props.keg.caffeine;
+    }
+    if (props.keg.quantity > 0) {
+      quantity = props.keg.quantity;
+    }
   } 
 
   return (
