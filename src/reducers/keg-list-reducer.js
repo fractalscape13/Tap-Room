@@ -1,13 +1,6 @@
-import * as c from './../actions/ActionTypes';
+import * as c from '../actions/ActionTypes';
 
-let initialState = {
-  masterKegList: [],
-  formVisibleOnPage: false,
-  selectedKeg: null,
-  editing: false
-}
-
-export default (state = initialState, action) => {
+export default (state = {}, action) => {
   const { name, brand, price, flavor, caffeine, quantity, id } = action;
   switch (action.type) {
     case c.NEW_KEG:
@@ -41,12 +34,8 @@ export default (state = initialState, action) => {
       const newState = {...state};
       delete newState[id];
       return newState;
-    case c.TOGGLE_FORM:
-      return !state.formVisibleOnPage;
-    case c.TOGGLE_EDITING:
-      return !state.editing;
     case c.SELECT_KEG:
-      selectedKeg: id
+      return state;
     default: 
     return state;
   }

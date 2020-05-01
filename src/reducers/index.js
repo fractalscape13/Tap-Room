@@ -3,7 +3,7 @@ import toggleReducer from './toggle-reducer';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-  toggleState: toggleReducer,
+  toggleConditions: toggleReducer,
   masterKegList: kegListReducer
 });
 
