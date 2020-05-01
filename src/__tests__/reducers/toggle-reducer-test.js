@@ -17,16 +17,16 @@ describe('reducer', () => {
     });
   });
 
-  test('should return true form visible state when toggle_form is called', () => {
-    expect(reducer(initialState, {type: c.TOGGLE_FORM})).toEqual({
+  test('should return true form visible state when toggle_form_true is called', () => {
+    expect(reducer(initialState, {type: c.TOGGLE_FORM_TRUE})).toEqual({
       formVisibleOnPage: true,
       editing: false,
       selectedKeg: null
     });
   });
 
-  test('should return true editing state when toggle_editing is called', () => {
-    expect(reducer(initialState, {type: c.TOGGLE_EDITING})).toEqual({
+  test('should return true editing state when toggle_editing_true is called', () => {
+    expect(reducer(initialState, {type: c.TOGGLE_EDITING_TRUE})).toEqual({
       formVisibleOnPage: false,
       editing: true,
       selectedKeg: null
