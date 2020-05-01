@@ -1,6 +1,8 @@
 export const NEW_KEG = 'NEW_KEG';
 export const EDIT_KEG = 'EDIT_KEG';
 export const DELETE_KEG = 'DELETE_KEG';
-export const TOGGLE_FORM = 'TOGGLE_FORM';
-export const TOGGLE_EDITING = 'TOGGLE_EDITING';
+export const TOGGLE_FORM_TRUE = 'TOGGLE_FORM_TRUE';
+export const TOGGLE_FORM_FALSE = 'TOGGLE_FORM_FALSE';
+export const TOGGLE_EDITING_TRUE = 'TOGGLE_EDITING_TRUE';
+export const TOGGLE_EDITING_FALSE = 'TOGGLE_EDITING_FALSE';
 export const SELECT_KEG = 'SELECT_KEG';

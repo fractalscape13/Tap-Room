@@ -1,6 +1,7 @@
 import * as c from './ActionTypes';
 
 export const newKeg = (keg) => {
+  console.log("!!!!!", keg);
   const { name, brand, price, flavor, caffeine, quantity, id } = keg;
   return {
     type: c.NEW_KEG,
@@ -33,12 +34,20 @@ export const deleteKeg = (id) => ({
   id
 });
 
-export const toggleForm = () => ({
-  type: c.TOGGLE_FORM
+export const toggleFormTrue = () => ({
+  type: c.TOGGLE_FORM_TRUE
 });
 
-export const toggleEditing = () => ({
-  type: c.TOGGLE_EDITING
+export const toggleFormFalse = () => ({
+  type: c.TOGGLE_FORM_FALSE
+});
+
+export const toggleEditingTrue = () => ({
+  type: c.TOGGLE_EDITING_TRUE
+});
+
+export const toggleEditingFalse = () => ({
+  type: c.TOGGLE_EDITING_FALSE
 });
 
 export const selectKeg = (id) => ({

@@ -6,46 +6,58 @@ import KegDetail from './KegDetail';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import * as a from './../actions/index';
+import * as c from './../actions/ActionTypes';
 
 class TapRoomControl extends React.Component {
 
   handleEditClick = () => {
-    this.setState({editing: true});
+    const action = a.toggleEditingTrue();
+    this.props.dispatch(action);
   }
 
   handleChangingSelectedKeg = (id) => {
-    const currentKeg = this.props.masterKegList.filter(keg => keg.id === id)[0];
+    const currentKeg = this.props.masterKegList[id];
+    console.log("CURRRREEENNNTTT", currentKeg);
     const action = a.selectKeg(currentKeg.id);
     this.props.dispatch(action);
   }
 
   handleClick = () => {
-    if (this.state.selectedKeg != null) {
-      this.setState({
-        formVisibleOnPage: false,
-        selectedKeg: null,
-        editing: false
-      });
+    if (this.props.selectedKeg.selectedKeg != null) {
+      const action = a.toggleFormFalse();
+      this.props.dispatch(action);
+      const action2 = a.toggleEditingFalse();
+      this.props.dispatch(action2);
+      const action3 = a.selectKeg(null);
+      this.props.dispatch(action3);
     } else {
-      this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage
-      }));
+      const action4 = a.toggleFormTrue();
+      this.props.dispatch(action4);
     }
   }
 
   handleAddingNewKegToList = (newKeg) => {
-    const newMasterKegList = [...this.props.masterKegList, newKeg];
-    this.setState({masterKegList: newMasterKegList, formVisibleOnPage: false});
+    const action = a.newKeg(newKeg);
+    this.props.dispatch(action);
+    const action2 = a.toggleFormFalse();
+    this.props.dispatch(action2);
   }
 
   handleDeletingKeg = (id) => {
-    const newMasterKegList = this.props.masterKegList.filter(keg => keg.id !== id);
-    this.setState({masterKegList: newMasterKegList, selectedKeg: null});
+    const action = a.deleteKeg(id);
+    this.props.dispatch(action);
+    const action2 = a.selectKeg(null);
+    this.props.dispatch(action2);
   }
 
   handleEditingKeg = (kegToEdit) => {
-    const editedMasterKegList = this.props.masterKegList.filter(keg => keg.id !== this.props.selectedKeg).concat(kegToEdit);
-    this.setState({masterKegList: editedMasterKegList, editing: false, selectedKeg: null});
+    console.log("keg to edit", kegToEdit);
+    const action = a.editKeg(kegToEdit);
+    this.props.dispatch(action);
+    const action2 = a.toggleEditingFalse();
+    this.props.dispatch(action2);
+    const action3 = a.selectKeg(null);
+    this.props.dispatch(action3);
   }
 
   handleSellingPint = (kegToUpdate) => {
@@ -58,23 +70,25 @@ class TapRoomControl extends React.Component {
       quantity: kegToUpdate.quantity - 1,
       id: kegToUpdate.id
     }
-    const newMasterKegList = this.props.masterKegList.filter(keg => keg.id !== kegToUpdate.id).concat(newKeg);
-    this.setState({masterKegList: newMasterKegList});
+    const action = a.editKeg(newKeg);
+    this.props.dispatch(action);
   }
 
+  
   render(){
-    console.log("PROPS!!!!!!", this.props);
     console.log("Props.toggleConditions:::", this.props.toggleConditions);
     console.log("Props.masterKegList::::", this.props.masterKegList);
     console.log("Props.selectedKeg::::", this.props.selectedKeg);
-
+    
+    const currentKeg = this.props.masterKegList[this.props.selectedKeg.selectedKeg];
+    console.log("current keg", currentKeg);
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.props.toggleConditions.editing) {
       currentlyVisibleState = <EditKegForm editing={this.props.toggleConditions.editing} keg={this.props.masterKegList[this.props.selectedKeg.selectedKeg]} onEditKeg={this.handleEditingKeg} />
       buttonText="Return to Keg List";
-    } else if (this.props.selectedKeg != null) {
-      currentlyVisibleState = <KegDetail keg={this.props.masterKegList[this.props.selectedKeg.selectedKeg]} onClickingDelete={this.handleDeletingKeg} onClickingEdit={this.handleEditClick} />
+    } else if (this.props.selectedKeg.selectedKeg != null) {
+      currentlyVisibleState = <KegDetail keg={currentKeg} onClickingDelete={this.handleDeletingKeg} onClickingEdit={this.handleEditClick} />
       buttonText = "Return to Keg List";
     } else if (this.props.toggleConditions.formVisibleOnPage) {
       currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />

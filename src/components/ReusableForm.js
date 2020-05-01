@@ -10,6 +10,7 @@ function ReusableForm(props) {
   let quantity = null;
   
   if (props.editing) {
+    console.log("check it out", props)
     name = props.keg.name;
     brand = props.keg.brand;
     price = props.keg.price;
