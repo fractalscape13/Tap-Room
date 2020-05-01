@@ -32,5 +32,4 @@ describe('reducer', () => {
       selectedKeg: null
     });
   });
-
 });

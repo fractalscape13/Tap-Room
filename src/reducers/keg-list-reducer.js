@@ -1,10 +1,11 @@
 import * as c from '../actions/ActionTypes';
 
+
 export default (state = {}, action) => {
   const { name, brand, price, flavor, caffeine, quantity, id } = action;
   switch (action.type) {
     case c.NEW_KEG:
-      const newMasterKegList = [...state.masterKegList, {
+      return Object.assign({}, state, {
         [id]: {
           name: name,
           brand: brand,
@@ -14,9 +15,6 @@ export default (state = {}, action) => {
           quantity: quantity,
           id: id
         }
-      }];
-      return Object.assign({}, state, {
-        masterKegList: newMasterKegList
       });
     case c.EDIT_KEG:
       return Object.assign({}, state, {
