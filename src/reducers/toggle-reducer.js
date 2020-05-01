@@ -6,7 +6,6 @@ let initialState = {
 };
 
 export default (state = initialState, action) => {
-  const { editing, formVisibleOnPage } = action;
   switch (action.type) {
     case c.TOGGLE_FORM_TRUE:
       return Object.assign({}, state, {
