@@ -15,7 +15,7 @@ _This React-based app uses Redux for all state and allows a user to add kegs to 
 _Setup assumes use of Git version control_
 
 In terminal, navigate to desktop or other directory and clone the repository by typing:
-  * git clone https://github.com/fractalscape13/TapRoom
+  * git clone https://github.com/fractalscape13/TapRoomWeek2
 
 In the project directory, run "npm install" to install all dependencies.
 
