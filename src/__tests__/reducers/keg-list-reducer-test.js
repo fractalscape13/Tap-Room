@@ -15,6 +15,27 @@ describe('reducer', () => {
     id: 1
   };
 
+  const currentState = {
+    1: {
+      name: 'Electric Koolaid',
+      brand: 'Humboocha',
+      price: 5,
+      flavor: 'Papaya',
+      caffeine: 25,
+      quantity: 140,
+      id: 1
+    },
+    2: {
+      name: 'Nectar',
+      brand: 'GoldenBooch',
+      price: 4,
+      flavor: 'Jackfruit',
+      caffeine: 15,
+      quantity: 250,
+      id: 2
+    }
+  };
+
   test('should return default state if no type specified', () => {
     expect(reducer({}, {type: null})).toEqual({});
   });
@@ -40,6 +61,24 @@ describe('reducer', () => {
         caffeine: caffeine,
         quantity: quantity, 
         id: id
+      }
+    });
+  });
+
+  test('should successfully delete a ticket by id', () => {
+    action = {
+      type: c.DELETE_KEG,
+      id: 1
+    };
+    expect(reducer(currentState, action)).toEqual({
+      2: {
+        name: 'Nectar',
+        brand: 'GoldenBooch',
+        price: 4,
+        flavor: 'Jackfruit',
+        caffeine: 15,
+        quantity: 250,
+        id: 2
       }
     });
   });

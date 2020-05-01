@@ -42,5 +42,6 @@ export const toggleEditing = () => ({
 });
 
 export const selectKeg = (id) => ({
-  type: c.SELECT_KEG
+  type: c.SELECT_KEG,
+  id
 });
