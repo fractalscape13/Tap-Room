@@ -50,6 +50,7 @@ function ReusableForm(props) {
         <input
           type='number'
           name='quantity'
+          min='0'
           placeholder='Quantity in pints'
           defaultValue={quantity} /><br />
         <button type='submit'>{props.buttonText}</button>
