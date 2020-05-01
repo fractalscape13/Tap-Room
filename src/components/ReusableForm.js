@@ -27,36 +27,39 @@ function ReusableForm(props) {
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
+        <label>Product name</label><br />
         <input
           type='text'
           name='name'
           placeholder='Name'
           defaultValue={name} /><br />
+        <label>Brand name</label><br />
         <input
           type='text'
           name='brand'
           placeholder='Brand'
           defaultValue={brand} /><br />
+        <label>Price per pint</label><br />
         <input
           type='number'
           name='price'
-          placeholder='Price per pint'
           defaultValue={price} /><br />
+        <label>Flavor</label><br />
         <input
           type='text'
           name='flavor'
           placeholder='Flavor'
           defaultValue={flavor} /><br />
+        <label>Caffeine content per pint in mg</label><br />
         <input
           type='number'
           name='caffeine'
-          placeholder='Caffeine content per serving in mg'
           defaultValue={caffeine} /><br />
+        <label>Quantity in pints</label><br />
         <input
           type='number'
           name='quantity'
           min='0'
-          placeholder='Quantity in pints'
           defaultValue={quantity} /><br />
         <button type='submit'>{props.buttonText}</button>
       </form>

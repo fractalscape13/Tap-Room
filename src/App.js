@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import TapRoomControl from './components/TapRoomControl';
 
 function App() {
@@ -10,7 +9,6 @@ function App() {
       <hr />
       <TapRoomControl />
       <hr />
-      <Footer />
     </React.Fragment>
   );
 }

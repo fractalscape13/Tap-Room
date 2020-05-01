@@ -94,7 +94,7 @@ class TapRoomControl extends React.Component {
     
     return (
       <React.Fragment>
-        {currentlyVisibleState}
+        {currentlyVisibleState}<br />
         <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );

@@ -5,6 +5,7 @@ function Keg(props) {
 
   let quantity = '';
   let style = {};
+  let imgSource = "http://source.unsplash.com/250x150/?" + props.flavor;
   if (props.quantity > 9) {
     quantity = 'Quantity in Keg: ' + props.quantity + ' pints';
     style = stocked;
@@ -20,12 +21,12 @@ function Keg(props) {
   }
 
   return (
-    <React.Fragment>
+    <div className="card">
         <p className="clickable" onClick = {() => props.whenKegClicked(props.id)}>On Tap: {props.name} (Click to see details)</p>
+        <img className="clickable" onClick = {() => props.whenKegClicked(props.id)} src={imgSource} alt="booch flavor" /><br />
         <p style={style}>{quantity} </p>
         <button className="sellBtn" onClick={()=> props.onClickingSellPint(props.currentKeg) }>Sell a pint</button> 
-        <hr />
-    </React.Fragment>
+    </div>
   );
 }
 
@@ -33,6 +34,7 @@ Keg.propTypes = {
   name: PropTypes.string,
   id: PropTypes.string,
   quantity: PropTypes.number,
+  flavor: PropTypes.string,
   currentKeg: PropTypes.object,
   whenKegClicked: PropTypes.func,
   onClickingSellPint: PropTypes.func
@@ -43,7 +45,7 @@ const stocked = {
 }
 
 const gettingLow = {
-  color: 'darkorange'
+  color: 'mediumblue'
 }
 
 const gettingVeryLow = {
@@ -51,7 +53,7 @@ const gettingVeryLow = {
 }
 
 const outOfStock = {
-  color: 'red'
+  color: 'firebrick'
 }
 
 export default Keg;

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 function KegList(props) {
   return (
-    <React.Fragment>
+    <div className="overflow">
       {Object.values(props.kegList).map((keg) =>
         <Keg
           whenKegClicked={() => props.onKegSelection(keg.id)}
@@ -13,9 +13,10 @@ function KegList(props) {
           quantity={keg.quantity}
           id={keg.id} 
           key={keg.id}
+          flavor={keg.flavor}
           onClickingSellPint={props.onClickingSellPint}/>
       )}
-    </React.Fragment>
+    </div>
   );
 }
 
