@@ -22,7 +22,7 @@ function Keg(props) {
 
   return (
     <div className="card">
-        <p className="clickable" onClick = {() => props.whenKegClicked(props.id)}>On Tap: {props.name} (Click to see details)</p>
+        <p className="clickable" onClick = {() => props.whenKegClicked(props.id)}>On Tap: {props.name} </p><br />
         <img className="clickable" onClick = {() => props.whenKegClicked(props.id)} src={imgSource} alt="booch flavor" /><br />
         <p style={style}>{quantity} </p>
         <button className="sellBtn" onClick={()=> props.onClickingSellPint(props.currentKeg) }>Sell a pint</button> 
