@@ -1,7 +1,6 @@
 import * as c from './ActionTypes';
 
 export const newKeg = (keg) => {
-  console.log("!!!!!", keg);
   const { name, brand, price, flavor, caffeine, quantity, id } = keg;
   return {
     type: c.NEW_KEG,

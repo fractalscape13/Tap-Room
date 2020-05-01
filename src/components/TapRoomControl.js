@@ -16,7 +16,6 @@ class TapRoomControl extends React.Component {
 
   handleChangingSelectedKeg = (id) => {
     const currentKeg = this.props.masterKegList[id];
-    console.log("CURRRREEENNNTTT", currentKeg);
     const action = a.selectKeg(currentKeg.id);
     this.props.dispatch(action);
   }
@@ -50,7 +49,6 @@ class TapRoomControl extends React.Component {
   }
 
   handleEditingKeg = (kegToEdit) => {
-    console.log("keg to edit", kegToEdit);
     const action = a.editKeg(kegToEdit);
     this.props.dispatch(action);
     const action2 = a.toggleEditingFalse();
@@ -77,12 +75,7 @@ class TapRoomControl extends React.Component {
 
   
   render(){
-    console.log("Props.toggleConditions:::", this.props.toggleConditions);
-    console.log("Props.masterKegList::::", this.props.masterKegList);
-    console.log("Props.selectedKeg::::", this.props.selectedKeg);
-    
     const currentKeg = this.props.masterKegList[this.props.selectedKeg.selectedKeg];
-    console.log("current keg", currentKeg);
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.props.toggleConditions.editing) {
